@@ -18,7 +18,7 @@ function App() {
       id: "e3",
       title: "Car Insurance",
       amount: "294.67",
-      date: new Date(2021, 2, 28),
+      date: new Date(2021, 10, 28),
     },
     {
       id: "e4",
@@ -29,7 +29,7 @@ function App() {
   ];
 
   // const neweExpenseArray = expenses.map((expense, i) => {
-  //   id: expense.id, title: expense.title, "amount":
+  //   id: expense[i].id, title: expense[i].title, amount: expense[i].amount
   // });
 
   return (
@@ -37,7 +37,7 @@ function App() {
       <h2>Let's get started</h2>
       <Expenses items={expenses} />
     </div>
-  );
+
 }
 
 export default App;

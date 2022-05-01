@@ -14,6 +14,11 @@ function Expenses({ items }) {
         amount={items[1].amount}
         date={items[1].date}
       />
+      <ExpenseItem
+        title={items[2].title}
+        amount={items[2].amount}
+        date={items[2].date}
+      />
     </div>
   );
 }
