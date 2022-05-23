@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -28,13 +29,9 @@ const App = () => {
     },
   ];
 
-  // const neweExpenseArray = expenses.map((expense, i) => {
-  //   id: expense[i].id, title: expense[i].title, amount: expense[i].amount
-  // });
-
   return (
     <div>
-      <h2>Let's get started</h2>
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );
