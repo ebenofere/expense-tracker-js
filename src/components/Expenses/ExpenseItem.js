@@ -4,18 +4,21 @@ import Card from "../UI/Card";
 import { useState } from "react";
 
 const ExpenseItem = ({ title, amount, date }) => {
+  const [titleName, setTitleName] = useState(title);
+
   const clickHandler = () => {
-    console.log("Robinson Crusoe!");
+    setTitleName("Updated!");
+    console.log(title);
   };
 
   return (
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item_description">
-        <h2>{title}</h2>
+        <h2>{titleName}</h2>
         <div className="expense-item_price">${amount}</div>
       </div>
-      <button onClick={clickHandler}>Login</button>
+      <button onClick={clickHandler}>Click here</button>
     </Card>
   );
 };
