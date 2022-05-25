@@ -18,7 +18,6 @@ const ExpenseItem = ({ title, amount, date }) => {
         <h2>{titleName}</h2>
         <div className="expense-item_price">${amount}</div>
       </div>
-      <button onClick={clickHandler}>Click here</button>
     </Card>
   );
 };
