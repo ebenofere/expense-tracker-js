@@ -1,7 +1,9 @@
-return (
-    {/* OPTION 1 below... */}
+{
+  /* OPTION 1 below... */
+}
 
-  {/* {filteredExpenses.length === 0 ? (
+{
+  /* {filteredExpenses.length === 0 ? (
     <p className="no-expenses">No expenses found.</p>
   ) : (
     filteredExpenses.map((expense) => (
@@ -12,14 +14,20 @@ return (
         date={expense.date}
       />
     ))
-  )} */}
+  )} */
+}
 
-  {/* OPTION 2: You can also use this conditional below... */}
+{
+  /* OPTION 2: You can also use this conditional below... */
+}
 
-  {filteredExpenses.length === 0 && (
+{
+  filteredExpenses.length === 0 && (
     <p className="no-expenses">No expenses found.</p>
-  )}
-  {filteredExpenses.length > 0 &&
+  );
+}
+{
+  filteredExpenses.length > 0 &&
     filteredExpenses.map((expense) => (
       <ExpenseItem
         key={expense.id}
@@ -27,5 +35,5 @@ return (
         amount={expense.amount}
         date={expense.date}
       />
-    ))}
-)
+    ));
+}
