@@ -2,7 +2,7 @@ import "./expensesFilter.css";
 
 const ExpensesFilter = ({ selected, onChangeFilter }) => {
   const dropdownChangeHandler = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     onChangeFilter(event.target.value);
   };
 
