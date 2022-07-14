@@ -6,6 +6,8 @@ import { useState } from "react";
 const ExpenseItem = ({ title, amount, date }) => {
   const [titleName, setTitleName] = useState(title);
 
+  console.log(date, "date");
+
   const clickHandler = () => {
     setTitleName("Updated!");
     console.log(title);
