@@ -22,6 +22,7 @@ let transactions =
 
 // Add transaction
 function addTransaction(e) {
+  // This line prevents the default behavior of the event `e`. This is often used in event handlers to prevent the default action associated with the event, such as preventing a form submission.
   e.preventDefault();
 
   if (text.value.trim() === '' || amount.value.trim() === '') {
@@ -30,17 +31,22 @@ function addTransaction(e) {
     const transaction = {
       id: generateID(),
       text: text.value,
-      amount: +amount.value
+      amount: +amount.value // The unary plus operator (`+`) is used to convert the amount value from a string to a number.
     };
 
+    // adding the newly created `transaction` object to an array named `transactions`
     transactions.push(transaction);
 
+    // adding transaction to DOM
     addTransactionDOM(transaction);
 
+    // update the income, expense and balance
     updateValues();
 
+    // update the browser's local storage with the new transaction data, allowing it to persist even if the page is refreshed or closed
     updateLocalStorage();
-
+    
+    // reset the value of the text and amount input fields to an empty string, effectively clearing them out after the transaction has been added.
     text.value = '';
     amount.value = '';
   }

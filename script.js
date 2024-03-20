@@ -15,3 +15,46 @@ const amount = document.getElementById("amount");
 
 const localStorageTransactions = JSON.parse(localStorage.getItem("transactions")
 );
+
+let transactions = localStorage.getItem("transactions") !== null ? localStorageTransactions : [];
+
+// Add transaction
+function addTransaction(e) {
+  e.preventDefault();
+
+  if (text.value.trim() === "" || amount.value.trim() === "") {
+    alert("Please add a text and amount");
+  } else {
+    const transaction = {
+      id: generateID(),
+      text:text.value,
+      amount: +amount.value
+    }
+
+    // adding the newly created `transaction` object to an array named `transactions`
+    transactions.push(transaction);
+
+    // adding transaction to DOM
+    addTransactionDOM(transaction);
+
+    // update the income, expense and balance
+    updateValues();
+
+    // update local storage transactions
+    updateLocalStorage();
+
+    // clear input fields
+    text.value = '';
+    amount.value = '';
+  }
+}
+
+// Generate random ID
+function generateID() {
+  return Math.floor(Math.random() * 100000000);
+}
+
+// Add transaction to DOM list
+function addTransactionDOM(transaction) {
+
+}
