@@ -61,11 +61,12 @@ function generateID() {
 function addTransactionDOM(transaction) {
   // Get sign
   const sign = transaction.amount < 0 ? '-' : '+';
+  const signAlphabet = transaction.amount < 0 ? "minus" : "plus"; 
 
   const item = document.createElement('li');
 
   // Add class based on value
-  item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');  
+  item.classList.add(signAlphabet);  
 
   item.innerHTML = `
     ${transaction.text} <span>${sign}${Math.abs(
